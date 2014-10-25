@@ -1,0 +1,20 @@
+{
+  "blogs": [
+    {
+      "timestamp": 0,
+      "url": "http://www.perceptualedge.com/blog/?feed=rss2"
+    },
+    {
+      "timestamp": 0,
+      "url": "http://manzanamecanica.org/node/feed"
+    }
+  ],
+  "credentials": {
+    "oauth_access_url": "",
+    "oauth_request_url": "",
+    "access_token_secret": "",
+    "access_token": "",
+    "consumer_secret": "",
+    "consumer_key": ""
+  }
+}
