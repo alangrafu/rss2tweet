@@ -9,10 +9,12 @@ A bot to fetch RSS feeds and present them via Twitter.
 
 ## Install
 
+```
 npm install twit
 npm install feedparser
 
 git clone git@github.com/alangrafu/rss2tweet.git
+```
 
 ## Configuration
 
