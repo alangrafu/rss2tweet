@@ -26,9 +26,9 @@ var options = {};
     return;
   }
   var feedparser = new FeedParser([options]);
-  console.log("request "+i+" "+ config.blogs[i].url);
+  config.blogs[i].lasttimestamp = config.blogs[i].timestamp;
   var req = request(config.blogs[i].url);
-
+  console.log("Get ", config.blogs[i].url);
   req.on('error', function (error) {  console.log("can;'t connect!");});
   req.on('response', function (res) {
     var stream = this;
@@ -53,11 +53,13 @@ var options = {};
                       var maxLength = 140;
                       var thisDate = parseInt(new Date(post.pubdate).getTime());
                       if(thisDate > config.blogs[i].timestamp){
-                        config.blogs[i].lasttimestamp = thisDate;
-                        console.log("     ---->   "+post.title+" "+post.link+" "+thisDate+" "+i+" "+config.blogs[i].timestamp);
+			if(thisDate >  config.blogs[i].lasttimestamp){
+                        	config.blogs[i].lasttimestamp = thisDate;
+			}
+                        console.log(" ---> "+thisDate+" "+post.title+" "+post.link);
                         var maxLengthMsg = Math.min(maxLength - post.link.length -1, post.title.length);
                         var msg = post.title.substring(0, maxLengthMsg)+" "+post.link;
-                        T.post('statuses/update', { status:msg }, function(err, data, response) {})
+                        //T.post('statuses/update', { status:msg }, function(err, data, response) {})
                       }
 
                   })(item), 5000);
