@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 var Twit = require('twit')
 var fs = require('fs');
 
