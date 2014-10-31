@@ -59,7 +59,7 @@ var options = {};
                         console.log(" ---> "+thisDate+" "+post.title+" "+post.link);
                         var maxLengthMsg = Math.min(maxLength - post.link.length -1, post.title.length);
                         var msg = post.title.substring(0, maxLengthMsg)+" "+post.link;
-                        //T.post('statuses/update', { status:msg }, function(err, data, response) {})
+                        T.post('statuses/update', { status:msg }, function(err, data, response) {})
                       }
 
                   })(item), 5000);
